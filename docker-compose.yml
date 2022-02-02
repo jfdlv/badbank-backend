@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  server:
+
+    # Step 5.3 - Point build step to the server directory
+
+    build: '.'
+
+    ports:
+
+      # Step 5.4 - Add the port that the server application runs on - (port:port).
+
+      - '3000:3000'
+
+    depends_on:
+
+      - mongo
+
+  mongo:
+
+    image: mongo
+
+    ports:
+
+      - '27017:27017'
